@@ -1,0 +1,61 @@
+<mxfile host="app.diagrams.net">
+  <diagram name="评论处理流程（美观 S 形）" id="DifferShape">
+    <mxGraphModel dx="1080" dy="720" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169">
+      <root>
+        <mxCell id="0"/>
+        <mxCell id="1" parent="0"/>
+
+        <!-- 输入节点，使用文档形状 -->
+        <mxCell id="2" value="输入：评论数据" style="shape=document;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="40" y="40" width="160" height="70" as="geometry"/>
+        </mxCell>
+
+        <!-- 第1行 -->
+        <mxCell id="3" value="1. jieba分词" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;" vertex="1" parent="1">
+          <mxGeometry x="240" y="40" width="160" height="50" as="geometry"/>
+        </mxCell>
+        <mxCell id="4" value="2. 保留中文词\n去掉停用词" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;" vertex="1" parent="1">
+          <mxGeometry x="440" y="40" width="180" height="50" as="geometry"/>
+        </mxCell>
+
+        <!-- 第2行 -->
+        <mxCell id="5" value="3. 词性标注" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;" vertex="1" parent="1">
+          <mxGeometry x="440" y="120" width="160" height="50" as="geometry"/>
+        </mxCell>
+        <mxCell id="6" value="4. 过滤评价无关词" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;" vertex="1" parent="1">
+          <mxGeometry x="240" y="120" width="180" height="50" as="geometry"/>
+        </mxCell>
+        <mxCell id="7" value="5. 删除词数过少评论" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;" vertex="1" parent="1">
+          <mxGeometry x="40" y="120" width="180" height="50" as="geometry"/>
+        </mxCell>
+
+        <!-- 第3行 -->
+        <mxCell id="8" value="6. 平衡评论数量采样" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;" vertex="1" parent="1">
+          <mxGeometry x="40" y="200" width="180" height="50" as="geometry"/>
+        </mxCell>
+        <mxCell id="9" value="7. 训练LDA模型" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;" vertex="1" parent="1">
+          <mxGeometry x="240" y="200" width="160" height="50" as="geometry"/>
+        </mxCell>
+        <mxCell id="10" value="8. 确定主题名称" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;" vertex="1" parent="1">
+          <mxGeometry x="440" y="200" width="160" height="50" as="geometry"/>
+        </mxCell>
+
+        <!-- 第4行 -->
+        <mxCell id="11" value="9. 分析主题结果" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;" vertex="1" parent="1">
+          <mxGeometry x="440" y="280" width="160" height="50" as="geometry"/>
+        </mxCell>
+
+        <!-- 连线 -->
+        <mxCell id="12" style="endArrow=block;" edge="1" parent="1" source="2" target="3"/>
+        <mxCell id="13" style="endArrow=block;" edge="1" parent="1" source="3" target="4"/>
+        <mxCell id="14" style="endArrow=block;" edge="1" parent="1" source="4" target="5"/>
+        <mxCell id="15" style="endArrow=block;" edge="1" parent="1" source="5" target="6"/>
+        <mxCell id="16" style="endArrow=block;" edge="1" parent="1" source="6" target="7"/>
+        <mxCell id="17" style="endArrow=block;" edge="1" parent="1" source="7" target="8"/>
+        <mxCell id="18" style="endArrow=block;" edge="1" parent="1" source="8" target="9"/>
+        <mxCell id="19" style="endArrow=block;" edge="1" parent="1" source="9" target="10"/>
+        <mxCell id="20" style="endArrow=block;" edge="1" parent="1" source="10" target="11"/>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
